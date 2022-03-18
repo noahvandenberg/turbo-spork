@@ -35,6 +35,7 @@ module.exports = {
 //  // Migrations Schema
 // knex migrate:make initUsers --env development
 // knex migrate:latest --env development
+// knex migrate:rollback
 
 //  // Seeding
 // knex seed:make addUsers --env development
