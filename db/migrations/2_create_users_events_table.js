@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
  exports.up = function(knex) {
-  return knex.schema.createTable('events', table => {
+  return knex.schema.createTable('users_events', table => {
     table
       .increments('id')
       .unsigned()
@@ -24,5 +24,5 @@
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('events');
+  return knex.schema.dropTableIfExists('users_events');
 };
