@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const db = require('../bin/db')
+const chalk = require('chalk')
 
 // BREAD ROUTES
 
@@ -13,7 +14,7 @@ router.get('/', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in users.js @ BROWSE:', chalk.whiteBright(error)));
   }
 });
 
@@ -27,7 +28,7 @@ router.get('/:id', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in users.js @ READ:', chalk.whiteBright(error)));
   }
 });
 
@@ -44,7 +45,7 @@ router.get('/:id', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in users.js @ EDIT:', chalk.whiteBright(error)));
   }
 });
 
@@ -61,7 +62,7 @@ router.get('/', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in users.js @ ADD:', chalk.whiteBright(error)));
   }
 });
 
@@ -75,7 +76,7 @@ router.delete('/:id', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in users.js @ DELETE:', chalk.whiteBright(error)));
   }
 });
 

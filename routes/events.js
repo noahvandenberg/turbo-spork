@@ -13,7 +13,7 @@ router.get('/', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in events.js @ BROWSE:', chalk.whiteBright(error)));
   }
 });
 
@@ -27,7 +27,7 @@ router.get('/:id', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in events.js @ READ:', chalk.whiteBright(error)));
   }
 });
 
@@ -44,7 +44,7 @@ router.get('/:id', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in events.js @ EDIT:', chalk.whiteBright(error)));
   }
 });
 
@@ -61,7 +61,7 @@ router.get('/', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in events.js @ ADD:', chalk.whiteBright(error)));
   }
 });
 
@@ -75,7 +75,7 @@ router.delete('/:id', async(req, res) => {
     const dbResponse = await db.query(query);
     res.json(dbResponse.rows)
   } catch (error) {
-
+    console.log(chalk.redBright('ERROR in events.js @ DELETE:', chalk.whiteBright(error)));
   }
 });
 
