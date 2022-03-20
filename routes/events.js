@@ -4,27 +4,27 @@ var router = express.Router();
 // BREAD ROUTES
 
 // BROWSE GET
-router.get('/', function(req, res) {
+router.get('/', async(req, res) => {
   res.send('respond with a resource');
 });
 
 // READ GET
-router.get('/:id', function(req, res) {
+router.get('/:id', async(req, res) => {
   res.send('respond with a resource');
 });
 
 // EDIT PUT
-router.get('/:id', function(req, res) {
+router.get('/:id', async(req, res) => {
   res.send('respond with a resource');
 });
 
 // ADD POST
-router.get('/', function(req, res) {
+router.get('/', async(req, res) => {
   res.send('respond with a resource');
 });
 
 // DELETE DELETE
-router.delete('/:id', function(req, res) {
+router.delete('/:id', async(req, res) => {
   res.send('respond with a resource');
 });
 
