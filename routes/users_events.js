@@ -6,7 +6,10 @@ var router = express.Router();
 // BROWSE GET
 router.get('/', async(req, res) => {
   try {
-    res.send('respond with a resource');
+    const query = {
+      text: 'SELECT * FROM users_events;',
+    };
+    const dbResponse = await db.query(query);
   } catch (error) {
 
   }
@@ -15,7 +18,11 @@ router.get('/', async(req, res) => {
 // READ GET
 router.get('/:id', async(req, res) => {
   try {
-    res.send('respond with a resource');
+    const query = {
+      text: 'SELECT * FROM users_events WHERE id = $1;',
+      values: [req.params.id],
+    };
+    const dbResponse = await db.query(query);
   } catch (error) {
 
   }
@@ -24,7 +31,14 @@ router.get('/:id', async(req, res) => {
 // EDIT PUT
 router.get('/:id', async(req, res) => {
   try {
-    res.send('respond with a resource');
+    // req.body object destructuring
+    const [user_id, event_id] = req.body
+
+    const query = {
+      text: 'UPDATE users_events SET user_id=$1, event_id=$2 WHERE id=$3 RETURNING *;',
+      values: [user_id, event_id, req.params.id],
+    };
+    const dbResponse = await db.query(query);
   } catch (error) {
 
   }
@@ -33,7 +47,14 @@ router.get('/:id', async(req, res) => {
 // ADD POST
 router.get('/', async(req, res) => {
   try {
-    res.send('respond with a resource');
+    // req.body object destructuring
+    const [user_id, event_id] = req.body
+
+    const query = {
+      text: 'INSERT INTO users_events (user_id, event_id) VALUES ($1, $2) RETURNING *;',
+      values: [user_id, event_id],
+    };
+    const dbResponse = await db.query(query);
   } catch (error) {
 
   }
@@ -42,7 +63,11 @@ router.get('/', async(req, res) => {
 // DELETE DELETE
 router.delete('/:id', async(req, res) => {
   try {
-    res.send('respond with a resource');
+    const query = {
+      text: 'DELETE FROM users_events WHERE id = $1 RETURNING *;',
+      values: [req.params.id],
+    };
+    const dbResponse = await db.query(query);
   } catch (error) {
 
   }
