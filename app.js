@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 
 var usersRouter = require('./routes/users');
 var eventsRouter = require('./routes/events');
-var usersEventsRouter = require('./routes/usersEvents');
+var usersEventsRouter = require('./routes/users_events');
 
 var app = express();
 
