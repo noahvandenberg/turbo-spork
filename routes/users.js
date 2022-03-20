@@ -8,14 +8,29 @@ router.get('/', function(req, res, next) {
 
 // BREAD ROUTES
 
-// BROWSE
+// BROWSE GET
+router.get('/', function(req, res) {
+  res.send('respond with a resource');
+});
 
-// READ
+// READ GET
+router.get('/:id', function(req, res) {
+  res.send('respond with a resource');
+});
 
-// EDIT
+// EDIT PUT
+router.get('/:id', function(req, res) {
+  res.send('respond with a resource');
+});
 
-// ADD
+// ADD POST
+router.get('/', function(req, res) {
+  res.send('respond with a resource');
+});
 
-// DELETE
+// DELETE DELETE
+router.delete('/:id', function(req, res) {
+  res.send('respond with a resource');
+});
 
 module.exports = router;
