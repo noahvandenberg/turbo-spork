@@ -11,6 +11,7 @@ router.get('/', async(req, res) => {
       text: 'SELECT * FROM users_events;',
     };
     const dbResponse = await db.query(query);
+    res.json(dbResponse.rows)
   } catch (error) {
 
   }
@@ -24,6 +25,7 @@ router.get('/:id', async(req, res) => {
       values: [req.params.id],
     };
     const dbResponse = await db.query(query);
+    res.json(dbResponse.rows)
   } catch (error) {
 
   }
@@ -40,6 +42,7 @@ router.get('/:id', async(req, res) => {
       values: [user_id, event_id, req.params.id],
     };
     const dbResponse = await db.query(query);
+    res.json(dbResponse.rows)
   } catch (error) {
 
   }
@@ -56,6 +59,7 @@ router.get('/', async(req, res) => {
       values: [user_id, event_id],
     };
     const dbResponse = await db.query(query);
+    res.json(dbResponse.rows)
   } catch (error) {
 
   }
@@ -69,6 +73,7 @@ router.delete('/:id', async(req, res) => {
       values: [req.params.id],
     };
     const dbResponse = await db.query(query);
+    res.json(dbResponse.rows)
   } catch (error) {
 
   }
