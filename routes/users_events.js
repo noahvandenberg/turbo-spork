@@ -35,7 +35,7 @@ router.get('/:id', async(req, res) => {
 router.put('/:id', async(req, res) => {
   try {
     // req.body object destructuring
-    const [user_id, event_id] = req.body
+    const {user_id, event_id} = req.body;
 
     const query = {
       text: 'UPDATE users_events SET user_id=$1, event_id=$2 WHERE id=$3 RETURNING *;',
@@ -52,7 +52,7 @@ router.put('/:id', async(req, res) => {
 router.post('/', async(req, res) => {
   try {
     // req.body object destructuring
-    const [user_id, event_id] = req.body
+    const {user_id, event_id} = req.body;
 
     const query = {
       text: 'INSERT INTO users_events (user_id, event_id) VALUES ($1, $2) RETURNING *;',
