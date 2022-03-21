@@ -33,7 +33,7 @@ router.get('/:id', async(req, res) => {
 });
 
 // EDIT PUT
-router.get('/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     // req.body object destructuring
     const [email, name, password, bio, profile_image_url, gender, birthdate, sports, km_range] = req.body
@@ -50,7 +50,7 @@ router.get('/:id', async(req, res) => {
 });
 
 // ADD POST
-router.get('/', async(req, res) => {
+router.post('/', async(req, res) => {
   try {
     // req.body object destructuring
     const [email, name, password, bio, profile_image_url, gender, birthdate, sports, km_range] = req.body

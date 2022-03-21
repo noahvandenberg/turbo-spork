@@ -32,7 +32,7 @@ router.get('/:id', async(req, res) => {
 });
 
 // EDIT PUT
-router.get('/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     // req.body object destructuring
     const [user_id, event_id] = req.body
@@ -49,7 +49,7 @@ router.get('/:id', async(req, res) => {
 });
 
 // ADD POST
-router.get('/', async(req, res) => {
+router.post('/', async(req, res) => {
   try {
     // req.body object destructuring
     const [user_id, event_id] = req.body
